@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Central Pehuenia</title>
+<title>Central web</title>
 </head><body><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;700&display=swap">
 <style>
   /* Réplica del tema "slate · dark" de gethomepage.dev (Tailwind slate, bg = slate-800) */
@@ -33,15 +33,14 @@
   .widget{display:flex;flex-direction:column;justify-content:center;margin-top:8px;padding:8px 12px;border-radius:6px;background:rgb(255 255 255/.05);
     box-shadow:0 4px 6px -1px rgb(var(--s900)/.2),0 2px 4px -2px rgb(var(--s900)/.2)}
   .widget.logo{padding:8px 12px}
-  .widget.logo img{width:48px;height:48px;border-radius:50%;object-fit:cover;margin-right:12px}
+  .logos{display:flex;gap:6px;margin-right:12px}
+  .logos img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:#fff}
   .greeting{font-size:20px;line-height:28px;margin-right:12px}
   .rrow{display:flex;flex-direction:row;flex-wrap:wrap;align-self:center;justify-content:space-between}
   .resource{flex:none;display:flex;align-items:center;margin-right:12px;padding:6px 0}
   .resource svg{width:20px;height:20px;stroke:rgb(var(--s200))}
   .resource .col{display:flex;flex-direction:column;margin-left:12px;text-align:left;min-width:85px}
   .resource .kv{display:flex;justify-content:space-between;gap:8px;font-size:12px;line-height:16px}
-  .bar{margin-top:2px;width:100%;height:4px;border-radius:9999px;background:rgb(var(--s200)/.2)}
-  .bar i{display:block;height:4px;border-radius:9999px;background:rgb(var(--s200)/.5)}
   .wlabel{margin-left:24px;padding-top:4px;text-align:center;font-size:12px;line-height:16px}
   .datetime{display:flex;align-items:center;justify-content:flex-end;font-size:18px;line-height:28px;font-variant-numeric:tabular-nums}
   .note{font-size:12px;line-height:16px;color:rgb(var(--s300))}
@@ -68,10 +67,6 @@
   .tags{position:absolute;top:0;right:0;display:flex;gap:8px;margin-right:8px;z-index:10}
   .tag{padding:2px 6px;border-radius:0 0 3px 3px;background:rgb(var(--s900)/.5);font-size:8px;line-height:12px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:rgb(var(--emerald)/.8)}
   .tag.key{color:rgb(var(--blue)/.8)}
-  .stats{position:relative;display:flex;width:100%}
-  .block{flex:1;margin:4px;padding:4px;border-radius:2px;background:rgb(var(--s900)/.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-  .block b{font-weight:200;font-size:14px;line-height:20px;font-variant-numeric:tabular-nums}
-  .block small{font-weight:700;font-size:12px;line-height:16px;text-transform:uppercase}
 
   /* bookmarks */
   .bmk{display:block;width:100%;margin-bottom:12px;border-radius:6px;font-weight:500;color:rgb(var(--s200));background:rgb(255 255 255/.05);
@@ -108,28 +103,19 @@
 
   <div class="header">
     <div class="widgets">
-      <div class="widget logo"><div style="display:flex;align-items:center"><img src="assets/img/logo.jpeg" alt="PPP"><span class="greeting">Central de paneles</span></div></div>
+      <div class="widget logo"><div style="display:flex;align-items:center">
+        <div class="logos"><img src="assets/img/logo-pehuenia.jpg" alt="Pehuenia" title="Primeros Productos Pehuenia"><img src="assets/img/logo-comercializadora.jpg" alt="Comercializadora LP" title="Comercializadora LP"><img src="assets/img/logo-lagopuelo.jpg" alt="Lago Puelo" title="Lago Puelo"><img src="assets/img/logo-elebes.jpg" alt="Elebes" title="Elebes"></div>
+        <span class="greeting">Central web</span></div></div>
       <div class="widget">
         <div class="rrow">
           <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Fleteros</span><span>14:00</span></div><div class="bar"><i style="width:100%"></i></div></div></div>
+            <div class="col"><div class="kv"><span>Fleteros</span><span>14:00</span></div></div></div>
           <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Ventas</span><span>14:45</span></div><div class="bar"><i style="width:100%"></i></div></div></div>
+            <div class="col"><div class="kv"><span>Ventas</span><span>14:45</span></div></div></div>
           <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Depósito</span><span>04:12</span></div><div class="bar"><i style="width:100%"></i></div></div></div>
+            <div class="col"><div class="kv"><span>Depósito</span><span>04:12</span></div></div></div>
         </div>
-        <div class="wlabel">Robots · corrieron hoy</div>
-      </div>
-      <div class="widget">
-        <div class="rrow">
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-target"/></svg>
-            <div class="col"><div class="kv"><span>Objetivo Peso</span><span>62%</span></div><div class="bar"><i style="width:62%"></i></div></div></div>
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-truck"/></svg>
-            <div class="col"><div class="kv"><span>Entrega</span><span>87%</span></div><div class="bar"><i style="width:87%"></i></div></div></div>
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-box"/></svg>
-            <div class="col"><div class="kv"><span>Cartón</span><span>64%</span></div><div class="bar"><i style="width:64%"></i></div></div></div>
-        </div>
-        <div class="wlabel">Septiembre · PPP</div>
+        <div class="wlabel">Robots · actualización diaria</div>
       </div>
     </div>
     <div class="widgets">
@@ -149,7 +135,6 @@
             <div class="txt"><div>Caja tesorería</div><p>Movimientos de caja directo a la planilla de Drive</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>14</b><small>Movimientos</small></div><div class="block"><b>Glory</b><small>Contadora</small></div><div class="block"><b>PPP</b><small>Empresa</small></div></div>
         </a></li>
         <li><a class="card" href="https://arca-vs-gescom.panelempresas.workers.dev" target="_blank" rel="noreferrer">
           <div class="row">
@@ -157,7 +142,6 @@
             <div class="txt"><div>Conciliación ARCA vs Gescom</div><p>Compras contra Mis Comprobantes, 4 empresas</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>37</b><small>Faltan cargar</small></div><div class="block"><b>4</b><small>Empresas</small></div></div>
         </a></li>
         <li><a class="card" href="https://control-transferencias-mp.panelempresas.workers.dev" target="_blank" rel="noreferrer">
           <div class="row">
@@ -165,7 +149,6 @@
             <div class="txt"><div>Control de transferencias MP</div><p>Verifica pagos de MercadoPago al cerrar viajes</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>21</b><small>Consultas hoy</small></div><div class="block"><b>2</b><small>Cuentas MP</small></div></div>
         </a></li>
       </ul>
     </div>
@@ -179,7 +162,6 @@
             <div class="txt"><div>Panel de depósito</div><p>Operarios: Digip cruzado con las NC de Gescom</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>12</b><small>Operarios</small></div><div class="block"><b>Ago</b><small>Mes cerrado</small></div><div class="block"><b>04:12</b><small>Robot</small></div></div>
         </a></li>
       </ul>
     </div>
@@ -193,7 +175,6 @@
             <div class="txt"><div>Panel de ventas</div><p>3 empresas, objetivos, pagos a proveedores y chat</p></div>
           </div>
           <div class="tags"><div class="tag key">Con clave</div></div>
-          <div class="stats"><div class="block"><b>62%</b><small>Objetivo</small></div><div class="block"><b>3</b><small>Roles</small></div><div class="block"><b>14:45</b><small>Robot</small></div></div>
         </a></li>
       </ul>
     </div>
@@ -207,7 +188,6 @@
             <div class="txt"><div>Fleteros PPP</div><p>Efectividad de entrega y retorno de cartón</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>87%</b><small>Entrega</small></div><div class="block"><b>64%</b><small>Cartón</small></div><div class="block"><b>14:00</b><small>Robot</small></div></div>
         </a></li>
         <li><a class="card" href="https://fleteroslp-elebes.github.io/panel/" target="_blank" rel="noreferrer">
           <div class="row">
@@ -215,7 +195,6 @@
             <div class="txt"><div>Fleteros Lago Puelo + Elebes</div><p>Anillos, ranking y detalle por fletero</p></div>
           </div>
           <div class="tags"><div class="tag">En línea</div></div>
-          <div class="stats"><div class="block"><b>91%</b><small>Entrega</small></div><div class="block"><b>58%</b><small>Cartón</small></div><div class="block"><b>14:10</b><small>Robot</small></div></div>
         </a></li>
       </ul>
     </div>
@@ -232,8 +211,6 @@
       <div class="ghead"><h2>Externos</h2></div>
       <ul class="list">
         <li><a class="bmk" href="https://portalcf.cloud.afip.gob.ar/portal/app/" target="_blank" rel="noreferrer"><div class="row"><div class="abbr">AR</div><div class="bt"><div class="n">ARCA</div><div class="d">Mis Comprobantes</div></div></div></a></li>
-        <li><a class="bmk" href="https://www.mercadopago.com.ar" target="_blank" rel="noreferrer"><div class="row"><div class="abbr">MP</div><div class="bt"><div class="n">MercadoPago</div><div class="d">mercadopago.com.ar</div></div></div></a></li>
-        <li><a class="bmk" href="https://drive.google.com" target="_blank" rel="noreferrer"><div class="row"><div class="abbr">DR</div><div class="bt"><div class="n">Drive</div><div class="d">Planilla de caja</div></div></div></a></li>
       </ul>
     </div>
     <div class="group bm">
@@ -247,7 +224,7 @@
 
   </div>
 
-  <footer>Boceto · los porcentajes y conteos son de ejemplo · formato gethomepage.dev</footer>
+  <footer>Central web</footer>
 </div>
 
 <script>
@@ -256,3 +233,5 @@
   const tick = () => el.textContent = f.format(new Date());
   tick(); setInterval(tick, 1000);
 </script>
+
+</body></html>
