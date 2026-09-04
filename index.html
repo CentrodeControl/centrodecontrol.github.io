@@ -36,12 +36,6 @@
   .logos{display:flex;gap:6px;margin-right:12px}
   .logos img{width:32px;height:32px;border-radius:50%;object-fit:cover;background:#fff}
   .greeting{font-size:20px;line-height:28px;margin-right:12px}
-  .rrow{display:flex;flex-direction:row;flex-wrap:wrap;align-self:center;justify-content:space-between}
-  .resource{flex:none;display:flex;align-items:center;margin-right:12px;padding:6px 0}
-  .resource svg{width:20px;height:20px;stroke:rgb(var(--s200))}
-  .resource .col{display:flex;flex-direction:column;margin-left:12px;text-align:left;min-width:85px}
-  .resource .kv{display:flex;justify-content:space-between;gap:8px;font-size:12px;line-height:16px}
-  .wlabel{margin-left:24px;padding-top:4px;text-align:center;font-size:12px;line-height:16px}
   .datetime{display:flex;align-items:center;justify-content:flex-end;font-size:18px;line-height:28px;font-variant-numeric:tabular-nums}
 
   /* groups */
@@ -93,10 +87,7 @@
     <g id="i-check"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></g>
     <g id="i-card"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></g>
     <g id="i-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
-    <g id="i-server"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></g>
-    <g id="i-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
     <g id="i-clip"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></g>
-    <g id="i-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></g>
   </defs>
 </svg>
 
@@ -108,17 +99,6 @@
       <div class="widget logo"><div style="display:flex;align-items:center">
         <div class="logos"><img src="assets/img/logo-pehuenia.jpg" alt="Pehuenia" title="Primeros Productos Pehuenia"><img src="assets/img/logo-comercializadora.jpg" alt="Comercializadora LP" title="Comercializadora LP"><img src="assets/img/logo-lagopuelo.jpg" alt="Lago Puelo" title="Lago Puelo"><img src="assets/img/logo-elebes.jpg" alt="Elebes" title="Elebes"></div>
         <span class="greeting">Central web</span></div></div>
-      <div class="widget">
-        <div class="rrow">
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Fleteros</span><span>14:00</span></div></div></div>
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Ventas</span><span>14:45</span></div></div></div>
-          <div class="resource"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-server"/></svg>
-            <div class="col"><div class="kv"><span>Depósito</span><span>04:12</span></div></div></div>
-        </div>
-        <div class="wlabel">Robots · actualización diaria</div>
-      </div>
     </div>
     <div class="widgets">
       <div class="widget"><div class="datetime" id="dt"></div></div>
@@ -157,7 +137,7 @@
     <div class="group">
       <div class="ghead"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-box"/></svg><h2>Depósito</h2></div>
       <ul class="list">
-        <li><a class="card" href="https://panel-deposito.panelempresas.workers.dev" target="_blank" rel="noreferrer">
+        <li><a class="card" href="https://panel-deposito.panelempresas.workers.dev" data-fecha="https://panel-deposito.panelempresas.workers.dev/" target="_blank" rel="noreferrer">
           <div class="row">
             <div class="icon"><svg viewBox="0 0 24 24" style="stroke:#fbbf24"><use href="#i-users"/></svg></div>
             <div class="txt"><div>Panel de depósito</div><p>Operarios: Digip cruzado con las NC de Gescom</p></div>
@@ -230,12 +210,21 @@
   // verde solo si es de hoy (hora argentina); si no, verde si el sitio responde.
   const hoy = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Argentina/Buenos_Aires'}).format(new Date());
   const corto = d => new Date(d + 'T12:00:00').toLocaleDateString('es-AR', {day:'numeric', month:'short'});
+  const MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  // Saca la fecha (YYYY-MM-DD) del texto del panel: fleteros "Ultima actualizacion: 2026-09-03",
+  // depósito "generado":"4 de septiembre de 2026"
+  const fechaDe = txt => {
+    const iso = txt.match(/Ultima actualizacion: (\d{4}-\d{2}-\d{2})/);
+    if (iso) return iso[1];
+    const es = txt.match(/"generado":"(\d{1,2}) de (\w+) de (\d{4})"/);
+    return es[3] + '-' + String(MESES.indexOf(es[2]) + 1).padStart(2, '0') + '-' + es[1].padStart(2, '0');
+  };
   document.querySelectorAll('.card').forEach(async a => {
     const tag = a.querySelector('.tag.est');
     try {
       if (a.dataset.fecha) {
         const txt = await (await fetch(a.dataset.fecha, {cache:'no-store'})).text();
-        const f = txt.match(/Ultima actualizacion: (\d{4}-\d{2}-\d{2})/)[1];
+        const f = fechaDe(txt);
         const ok = f === hoy;
         tag.textContent = ok ? 'Actualizado hoy' : 'Actualizado ' + corto(f);
         tag.className = 'tag est ' + (ok ? 'ok' : 'warn');
