@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Política de privacidad del servicio de pedidos por WhatsApp de Comercializadora LP S.A. Qué datos usamos, con quién los compartimos y cómo pedir la baja.">
+<meta name="robots" content="index, follow">
+<title>Privacidad de Comercializadora LP</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --papel:#FCFCFA;
+  --hoja:#FFFFFF;
+  --tinta:#191F24;
+  --suave:#4A5760;
+  --tenue:#8A959C;
+  --linea:#E2E4DE;
+  --linea-fuerte:#C9CDC5;
+  --acento:#2F5D50;
+  --acento-tenue:#E8F0EC;
+  --legal-fondo:#F6F1E6;
+  --legal-borde:#B08A3E;
+  --falta-fondo:#FBEAE4;
+  --falta-tinta:#9A3D1B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papel:#12171A;
+    --hoja:#181F23;
+    --tinta:#E7EBE9;
+    --suave:#AAB6B9;
+    --tenue:#77858A;
+    --linea:#283238;
+    --linea-fuerte:#3A464C;
+    --acento:#7FBFA9;
+    --acento-tenue:#1B2C28;
+    --legal-fondo:#241E12;
+    --legal-borde:#8A6D2C;
+    --falta-fondo:#2E1A13;
+    --falta-tinta:#E39366;
+  }
+}
+:root[data-theme="dark"]{
+  --papel:#12171A;
+  --hoja:#181F23;
+  --tinta:#E7EBE9;
+  --suave:#AAB6B9;
+  --tenue:#77858A;
+  --linea:#283238;
+  --linea-fuerte:#3A464C;
+  --acento:#7FBFA9;
+  --acento-tenue:#1B2C28;
+  --legal-fondo:#241E12;
+  --legal-borde:#8A6D2C;
+  --falta-fondo:#2E1A13;
+  --falta-tinta:#E39366;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--papel);
+  color:var(--tinta);
+  font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  margin:0;
+  padding:0 22px 90px;
+  -webkit-font-smoothing:antialiased;
+}
+.hoja{max-width:780px;margin:0 auto}
+
+/* ---------- encabezado ---------- */
+header{padding:60px 0 26px;border-bottom:3px solid var(--tinta)}
+.membrete{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acento);margin:0 0 14px;
+}
+h1{
+  font-family:"Zilla Slab",Georgia,serif;
+  font-weight:700;font-size:clamp(34px,6.4vw,52px);line-height:1.02;
+  letter-spacing:-.015em;margin:0 0 16px;text-wrap:balance;
+}
+.bajada{font-size:19px;color:var(--suave);margin:0;max-width:60ch}
+.sellos{
+  display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:24px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12.5px;color:var(--tenue);
+}
+.sellos b{color:var(--suave);font-weight:500}
+
+/* ---------- indice ---------- */
+nav{margin:34px 0 8px;padding:20px 24px;background:var(--hoja);border:1px solid var(--linea);border-radius:2px}
+nav p{margin:0 0 12px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue)}
+nav ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 26px;counter-reset:idx}
+nav li{counter-increment:idx;font-size:15px;display:flex;gap:10px;align-items:baseline}
+nav li::before{
+  content:counter(idx,decimal-leading-zero);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;color:var(--tenue);
+}
+nav a{color:var(--tinta);text-decoration:none;border-bottom:1px solid transparent}
+nav a:hover,nav a:focus-visible{border-bottom-color:var(--acento);color:var(--acento)}
+
+/* ---------- secciones ---------- */
+section{margin-top:46px;scroll-margin-top:20px}
+section > h2{
+  font-family:"Zilla Slab",Georgia,serif;font-weight:600;
+  font-size:25px;line-height:1.2;margin:0 0 4px;text-wrap:balance;
+  display:flex;gap:14px;align-items:baseline;
+}
+section > h2 .n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:500;color:var(--acento);
+  flex:0 0 auto;padding-top:2px;
+}
+section > h2 + p, section > h2 + ul, section > h2 + div{margin-top:14px}
+h3{font-family:"Public Sans",sans-serif;font-weight:600;font-size:16.5px;margin:26px 0 6px;color:var(--tinta)}
+p{margin:0 0 14px;max-width:66ch}
+ul{margin:0 0 14px;padding-left:22px;max-width:66ch}
+li{margin-bottom:7px}
+a{color:var(--acento)}
+strong{font-weight:600}
+
+/* ---------- tabla ---------- */
+.tabla-envoltura{overflow-x:auto;margin:18px 0 22px;border:1px solid var(--linea);border-radius:2px;background:var(--hoja)}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:15.5px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--linea);vertical-align:top}
+thead th{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);
+  border-bottom:1px solid var(--linea-fuerte);white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600;width:32%}
+
+/* ---------- avisos ---------- */
+.legal{
+  background:var(--legal-fondo);border-left:4px solid var(--legal-borde);
+  padding:18px 22px;margin:18px 0;border-radius:0 2px 2px 0;
+}
+.legal p{margin:0;font-size:15.5px;font-style:italic;color:var(--tinta)}
+.legal p + p{margin-top:12px}
+.legal .cita{
+  font-style:normal;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);
+  display:block;margin-bottom:9px;
+}
+.baja{
+  background:var(--acento-tenue);border:1px solid var(--acento);
+  padding:18px 22px;margin:20px 0;border-radius:2px;
+}
+.baja p{margin:0}
+.baja .boton{
+  display:inline-block;margin:2px 4px;padding:5px 14px;
+  border:1px solid var(--acento);border-radius:999px;
+  font-size:14.5px;font-weight:600;color:var(--acento);white-space:nowrap;
+}
+.completar{
+  background:var(--falta-fondo);color:var(--falta-tinta);
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;
+  padding:1px 8px;border-radius:2px;white-space:nowrap;
+}
+
+/* ---------- pie ---------- */
+.responsable{margin-top:48px;padding:26px 28px;background:var(--hoja);border:1px solid var(--linea-fuerte);border-radius:2px}
+.responsable h2{font-family:"Zilla Slab",Georgia,serif;font-size:21px;margin:0 0 16px;font-weight:600}
+.datos{display:grid;grid-template-columns:auto 1fr;gap:9px 22px;font-size:16px;align-items:baseline}
+.datos dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--tenue);padding-top:3px}
+.datos dd{margin:0}
+footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--linea);font-size:14px;color:var(--tenue);font-family:"IBM Plex Mono",ui-monospace,monospace}
+@media (max-width:560px){
+  body{font-size:16px}
+  .datos{grid-template-columns:1fr;gap:2px 0}
+  .datos dd{margin-bottom:12px}
+  section > h2{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<div class="hoja">
+
+<header>
+  <p class="membrete">Comercializadora LP S.A. · WhatsApp de pedidos</p>
+  <h1>Política de privacidad</h1>
+  <p class="bajada">Qué datos usamos para tomarte el pedido por WhatsApp, con quién los compartimos y cómo pedís que dejemos de escribirte.</p>
+  <div class="sellos">
+    <span><b>Vigente desde:</b> 9 de septiembre de 2026</span>
+    <span><b>Versión:</b> 1.0</span>
+    <span><b>Ley aplicable:</b> 25.326 (Argentina)</span>
+  </div>
+</header>
+
+<nav>
+  <p>Contenido</p>
+  <ol>
+    <li><a href="#responsable">Quién trata tus datos</a></li>
+    <li><a href="#que">Qué datos tratamos</a></li>
+    <li><a href="#origen">De dónde salen</a></li>
+    <li><a href="#para-que">Para qué los usamos</a></li>
+    <li><a href="#con-quien">Con quién los compartimos</a></li>
+    <li><a href="#cuanto">Cuánto tiempo los guardamos</a></li>
+    <li><a href="#baja">Cómo dejás de recibir mensajes</a></li>
+    <li><a href="#derechos">Tus derechos</a></li>
+    <li><a href="#seguridad">Seguridad</a></li>
+    <li><a href="#menores">Menores de edad</a></li>
+    <li><a href="#cambios">Cambios en esta política</a></li>
+  </ol>
+</nav>
+
+<section id="responsable">
+  <h2><span class="n">01</span> Quién trata tus datos</h2>
+  <p>El responsable de la base de datos es <strong>Comercializadora LP S.A.</strong>, CUIT 30-71724643-4, con domicilio en Valdenegro 3670, C1431 Ciudad Autónoma de Buenos Aires.</p>
+  <p>Somos la distribuidora que te visita todas las semanas. Usamos WhatsApp para tomarte el pedido el día que le corresponde a tu zona, en lugar de depender solo de la visita del vendedor.</p>
+</section>
+
+<section id="que">
+  <h2><span class="n">02</span> Qué datos tratamos</h2>
+  <p>Solo lo que hace falta para tomar y entregar un pedido. No pedimos ni guardamos datos sensibles: nada de salud, ideología, religión ni datos bancarios.</p>
+  <div class="tabla-envoltura">
+    <table>
+      <thead>
+        <tr><th>Dato</th><th>Para qué lo necesitamos</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nombre del comercio y de la persona de contacto</td><td>Saber con quién estamos hablando y encabezar el pedido.</td></tr>
+        <tr><td>Número de WhatsApp</td><td>Escribirte el día de tu zona y recibir tu pedido.</td></tr>
+        <tr><td>Dirección y zona de entrega</td><td>Armar la hoja de ruta del reparto.</td></tr>
+        <tr><td>CUIT o condición frente al IVA</td><td>Emitir la factura o el remito que corresponde.</td></tr>
+        <tr><td>Historial de compras</td><td>Sugerirte lo que solés llevar y ahorrarte tener que dictarlo todo.</td></tr>
+        <tr><td>Los mensajes que intercambiás con el bot</td><td>Entender el pedido, mostrarte el resumen antes de confirmar y poder revisar un reclamo después.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="origen">
+  <h2><span class="n">03</span> De dónde salen</h2>
+  <ul>
+    <li><strong>De nuestro sistema de gestión.</strong> Tus datos comerciales y tu historial ya estaban ahí porque sos cliente nuestro: los cargamos cuando te dimos de alta y se actualizan con cada compra.</li>
+    <li><strong>De lo que vos nos das.</strong> El número de WhatsApp nos lo pasaste vos, o tu vendedor te lo pidió y te avisó para qué era. Y todo lo que escribís en la conversación.</li>
+  </ul>
+  <p>No compramos bases de datos, no sacamos tu número de listados de terceros y no te agregamos a ninguna lista de difusión sin que lo sepas.</p>
+</section>
+
+<section id="para-que">
+  <h2><span class="n">04</span> Para qué los usamos</h2>
+  <ul>
+    <li>Escribirte el día que se toman pedidos de tu zona y preguntarte si querés cargar el tuyo.</li>
+    <li>Mostrarte productos, precios y combos vigentes.</li>
+    <li>Interpretar lo que pediste, devolvértelo escrito para que lo revises y recién ahí cargarlo.</li>
+    <li>Confirmarte la entrega estimada y el monto estimado.</li>
+    <li>Cargar el pedido en nuestro sistema, prepararlo, facturarlo y entregarlo.</li>
+    <li>Atender un reclamo o una consulta sobre un pedido que hiciste.</li>
+  </ul>
+  <p>No usamos tus datos para otra cosa. No los vendemos, no los cedemos a otras empresas para que te ofrezcan sus productos y no armamos perfiles tuyos para venderlos a nadie.</p>
+</section>
+
+<section id="con-quien">
+  <h2><span class="n">05</span> Con quién los compartimos</h2>
+  <p>Con nadie que no sea imprescindible para que el servicio funcione. Concretamente:</p>
+  <div class="tabla-envoltura">
+    <table>
+      <thead>
+        <tr><th>Quién</th><th>Qué recibe y por qué</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Meta Platforms</td><td>Es la dueña de WhatsApp. Los mensajes pasan por su plataforma, igual que cualquier conversación de WhatsApp.</td></tr>
+        <tr><td>Nuestro proveedor de servidores</td><td>Aloja el sistema que recibe tus mensajes y arma el pedido. No usa tus datos para nada propio.</td></tr>
+        <tr><td>El servicio que interpreta el texto</td><td>Cuando escribís el pedido en tus palabras, un servicio de inteligencia artificial lee ese mensaje para traducirlo a productos y cantidades. Recibe el texto del pedido, no tu historial completo.</td></tr>
+        <tr><td>Nuestro contador y la AFIP/ARCA</td><td>Lo que exige la ley para facturar.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>Transferencia fuera del país</h3>
+  <p>Los servidores de estos proveedores pueden estar fuera de la Argentina. Cuando eso pasa, la transferencia se hace con las garantías que exige el artículo 12 de la Ley 25.326 y las disposiciones de la Agencia de Acceso a la Información Pública.</p>
+</section>
+
+<section id="cuanto">
+  <h2><span class="n">06</span> Cuánto tiempo los guardamos</h2>
+  <ul>
+    <li><strong>Los pedidos y las facturas</strong>, el plazo que exige la ley impositiva y comercial: diez años.</li>
+    <li><strong>Las conversaciones de WhatsApp</strong>, doce meses. Sirven para resolver un reclamo sobre un pedido; pasado ese plazo se borran.</li>
+    <li><strong>Si pedís la baja</strong>, dejamos de escribirte al instante. Guardamos únicamente tu número en una lista de no contactar, para asegurarnos de no volver a escribirte por error.</li>
+  </ul>
+</section>
+
+<section id="baja">
+  <h2><span class="n">07</span> Cómo dejás de recibir mensajes</h2>
+  <div class="baja">
+    <p>Todos los mensajes que te mandamos traen un botón. Tocá <span class="boton">No escribirme más</span> y el bot no te vuelve a escribir. No hay que llamar, ni mandar un mail, ni pedírselo al vendedor.</p>
+  </div>
+  <p>Tocar ese botón corta los mensajes del bot. No te da de baja como cliente: si querés seguir comprando, tu vendedor te sigue visitando como siempre.</p>
+  <p>Si más adelante querés volver a recibirlos, avisale a tu vendedor y te reactivamos.</p>
+</section>
+
+<section id="derechos">
+  <h2><span class="n">08</span> Tus derechos</h2>
+  <p>Podés pedirnos en cualquier momento que te digamos qué datos tuyos tenemos, que corrijamos los que estén mal, que los actualicemos o que los borremos. Escribinos a <a href="mailto:lucas.mendez@pehueniasa.com">lucas.mendez@pehueniasa.com</a> o decíselo a tu vendedor. Te respondemos dentro de los diez días corridos, como manda la ley.</p>
+  <div class="legal">
+    <p><span class="cita">Legenda obligatoria · Disposición 10/2008</span>El titular de los datos personales tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14, inciso 3 de la Ley N.º 25.326.</p>
+    <p>La Agencia de Acceso a la Información Pública, en su carácter de Órgano de Control de la Ley N.º 25.326, tiene la atribución de atender las denuncias y reclamos que interpongan quienes resulten afectados en sus derechos por incumplimiento de las normas vigentes en materia de protección de datos personales.</p>
+  </div>
+</section>
+
+<section id="seguridad">
+  <h2><span class="n">09</span> Seguridad</h2>
+  <p>La conversación viaja cifrada por WhatsApp. Nuestro sistema guarda los datos en servidores con acceso restringido y solo entran las personas de la empresa que necesitan hacerlo por su trabajo: ventas, administración y depósito.</p>
+  <p>El bot nunca te va a pedir una contraseña, un número de tarjeta, un código que te llegue por SMS ni datos de tu cuenta bancaria. Si recibís un mensaje que te los pide, no es nuestro.</p>
+</section>
+
+<section id="menores">
+  <h2><span class="n">10</span> Menores de edad</h2>
+  <p>Este servicio es para comercios. No está dirigido a menores de 18 años y no recolectamos datos de menores a sabiendas.</p>
+</section>
+
+<section id="cambios">
+  <h2><span class="n">11</span> Cambios en esta política</h2>
+  <p>Si cambiamos algo, actualizamos la fecha de arriba y publicamos la versión nueva en esta misma página. Si el cambio afecta para qué usamos tus datos, te avisamos por WhatsApp antes de aplicarlo.</p>
+</section>
+
+<div class="responsable">
+  <h2>Responsable de la base de datos</h2>
+  <dl class="datos">
+    <dt>Razón social</dt><dd>Comercializadora LP S.A.</dd>
+    <dt>CUIT</dt><dd>30-71724643-4</dd>
+    <dt>Domicilio</dt><dd>Valdenegro 3670, C1431 Ciudad Autónoma de Buenos Aires</dd>
+    <dt>Correo</dt><dd><a href="mailto:lucas.mendez@pehueniasa.com">lucas.mendez@pehueniasa.com</a></dd>
+    <dt>Teléfono</dt><dd>+54 9 11 7897-3134</dd>
+  </dl>
+</div>
+
+<footer>
+  Comercializadora LP S.A. · Política de privacidad v1.0 · 9 de septiembre de 2026
+</footer>
+
+</div>
+</body>
+</html>
