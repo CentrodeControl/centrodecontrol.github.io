@@ -59,6 +59,11 @@
   .icon svg{width:32px;height:32px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .txt{flex:1;padding:8px;font-size:14px;line-height:20px;text-align:left}
   .txt p{margin:0;font-size:12px;line-height:16px;font-weight:300;color:rgb(var(--s300))}
+  /* burbuja roja de notificación: cantidad de cosas vencidas dentro del panel */
+  .icon{position:relative}
+  .burbuja{position:absolute;top:2px;right:0;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#ef4444;color:#fff;
+    font-size:11px;line-height:18px;font-weight:700;text-align:center;box-shadow:0 0 0 2px rgb(var(--s800))}
+  .burbuja[hidden]{display:none}
   .tags{position:absolute;top:0;right:0;display:flex;gap:8px;margin-right:8px;z-index:10}
   .tag{padding:2px 6px;border-radius:0 0 3px 3px;background:rgb(var(--s900)/.5);font-size:8px;line-height:12px;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:rgb(255 255 255/.4)}
   .tag.key{color:rgb(var(--blue)/.8)}
@@ -91,6 +96,7 @@
     <g id="i-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></g>
     <g id="i-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></g>
     <g id="i-map"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4z"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></g>
+    <g id="i-wrench"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></g>
     <g id="i-clip"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></g>
   </defs>
 </svg>
@@ -226,6 +232,13 @@
           </div>
           <div class="tags"><div class="tag est">Verificando</div></div>
         </a></li>
+        <li><a class="card" href="https://pppfleteros.github.io/flota/" data-vencidos="https://script.google.com/macros/s/AKfycbx3zPzFnujLTmovdM9ddkImOHcvuWaUWKASN-84aZfzBYFDYeuHjcdlho56iS9S7TgW/exec" target="_blank" rel="noreferrer">
+          <div class="row">
+            <div class="icon"><svg viewBox="0 0 24 24" style="stroke:#f87171"><use href="#i-wrench"/></svg><span class="burbuja" hidden></span></div>
+            <div class="txt"><div>Gestión de flota</div><p>Service y VTV de las camionetas</p></div>
+          </div>
+          <div class="tags"><div class="tag est">Verificando</div></div>
+        </a></li>
       </ul>
     </div>
 
@@ -286,6 +299,20 @@
       tag.textContent = 'Sin respuesta';
       tag.className = 'tag est bad';
     }
+  });
+
+  // Burbuja roja: cuántas camionetas tienen algo vencido (service o VTV) en Gestión de flota
+  document.querySelectorAll('.card[data-vencidos]').forEach(async a => {
+    try {
+      const d = await (await fetch(a.dataset.vencidos)).json();
+      const n = d.camionetas.filter(c => c.estado === 'rojo').length;
+      const b = a.querySelector('.burbuja');
+      if (n > 0) {
+        b.textContent = n > 99 ? '99+' : n;
+        b.title = n + (n === 1 ? ' camioneta con algo vencido' : ' camionetas con algo vencido');
+        b.hidden = false;
+      }
+    } catch {}
   });
 </script>
 
